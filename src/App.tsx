@@ -102,43 +102,56 @@ function App() {
       <main id="top">
         <section className="hero" id="what-is-sindi">
           <div className="hero-copy">
-            <span className="eyebrow">What is Sindi</span>
+            <div className="hero-text-content">
+              <span className="eyebrow">What is Sindi</span>
 
-            <h2>
-              One ID.<br />
-              Any facility.<br />
-              Anywhere<span className="red-dot">.</span>
-            </h2>
+              <h2>
+                One ID.<br />
+                Any facility.<br />
+                Anywhere<span className="red-dot">.</span>
+              </h2>
 
-            <p className="hero-subtitle">
-              The integration layer South African public health has waited for.
-            </p>
+              <p className="hero-subtitle">
+                The integration layer South African public health has waited for.
+              </p>
 
-            <div className="red-line" />
+              <div className="red-line" />
 
-            <div className="hero-body">
-              <p>Sindi is a large-scale distributed health ecosystem connecting patients, facilities, and GPs.</p>
-              <p>Today, the patient moves, the record does not. HPRS holds only demographics. TIER.Net is HIV-only and offline. Gauteng is scanning 800M paper pages because files disappear.</p>
-              <p>Sindi fixes that with <strong>3 products, 1 truth: Sindi One.</strong></p>
+              <div className="hero-body">
+                <p>Sindi is a large-scale distributed health ecosystem connecting patients, facilities, and GPs.</p>
+                <p>Today, the patient moves, the record does not. HPRS holds only demographics. TIER.Net is HIV-only and offline. Gauteng is scanning 800M paper pages because files disappear.</p>
+                <p>Sindi fixes that with <strong>3 products, 1 truth: Sindi One.</strong></p>
+              </div>
             </div>
 
-            <div className="benefits">
-              <Benefit icon={<Heart size={17} fill="currentColor" />} text={<>No more<br />re-telling your story.</>} />
-              <Benefit icon={<Puzzle size={17} />} text={<>No more<br />missing files.</>} />
-              <Benefit icon={<ShieldCheck size={17} />} text={<>No more<br />flying blind.</>} />
-            </div>
+            <div className="hero-cta-content">
+              <div className="benefits-marquee-wrapper">
+                <div className="benefits">
+                  <Benefit icon={<Heart size={17} fill="currentColor" />} text="No more re-telling your story." />
+                  <Benefit icon={<Puzzle size={17} />} text="No more missing files." />
+                  <Benefit icon={<ShieldCheck size={17} />} text="No more flying blind." />
+                  
+                  {/* Duplicated for mobile marquee */}
+                  <div className="benefits-duplicate">
+                    <Benefit icon={<Heart size={17} fill="currentColor" />} text="No more re-telling your story." />
+                    <Benefit icon={<Puzzle size={17} />} text="No more missing files." />
+                    <Benefit icon={<ShieldCheck size={17} />} text="No more flying blind." />
+                  </div>
+                </div>
+              </div>
 
-            <div className="pricing">
-              <strong>Patients FREE</strong>
-              <span>|</span>
-              <strong className="licensed">Facilities LICENSED</strong>
-            </div>
+              <div className="pricing">
+                <strong>Patients FREE</strong>
+                <span>|</span>
+                <strong className="licensed">Facilities LICENSED</strong>
+              </div>
 
-            <JoinEarlyAccessButton />
+              <JoinEarlyAccessButton />
 
-            <div className="security">
-              <LockKeyhole size={13} />
-              Secure. Compliant. Built for South Africa.
+              <div className="security">
+                <LockKeyhole size={13} />
+                Secure. Compliant. Built for South Africa.
+              </div>
             </div>
           </div>
 

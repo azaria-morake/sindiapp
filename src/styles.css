@@ -283,10 +283,18 @@ img {
   color: var(--teal);
 }
 
+.benefits-marquee-wrapper {
+  max-width: 100%;
+}
+
 .benefits {
   display: flex;
   gap: 24px;
   margin: 25px 0;
+}
+
+.benefits-duplicate {
+  display: none;
 }
 
 .benefit {
@@ -1106,44 +1114,103 @@ footer p {
   }
 
   .hero h2 {
-    font-size: 3.4rem;
-    letter-spacing: -3px;
+    font-size: clamp(2.2rem, 8vw, 3.4rem);
+    letter-spacing: -2px;
   }
 
   .hero-subtitle {
     font-size: 17px;
   }
 
-  .benefits {
+  .hero-copy {
+    display: block;
+  }
+
+  .hero-text-content {
+    text-align: left;
+  }
+
+  .hero-cta-content {
+    display: flex;
     flex-direction: column;
-    gap: 12px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .eyebrow {
+    margin: 0 0 19px 0;
+  }
+
+  .red-line {
+    margin: 25px 0;
+  }
+
+  .benefits-marquee-wrapper {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+
+  .benefits {
+    flex-direction: row;
+    width: max-content;
+    gap: 24px;
+    align-items: center;
+    margin: 25px 0;
+    animation: benefits-marquee 15s linear infinite;
+  }
+
+  .benefits-duplicate {
+    display: contents;
+  }
+
+  .benefit {
+    white-space: nowrap;
+  }
+
+  .pricing {
+    justify-content: center;
+  }
+
+  .security {
+    justify-content: center;
+    margin-bottom: 25px;
   }
 
   .primary-button {
     width: 100%;
   }
 
+  .early-access-wrapper {
+    margin: 0 auto;
+  }
+
   .network {
-    height: 540px;
-    transform: scale(.84);
-    transform-origin: top center;
-    margin-bottom: -75px;
+    width: 100vw;
+    height: 83.3vw;
+    margin-left: calc(-50vw + 50%);
+    transform: none;
+    margin-bottom: 20px;
   }
 
   .node-icon {
-    width: 72px;
-    height: 72px;
-    border-radius: 22px;
+    width: 12vw;
+    height: 12vw;
+    border-radius: 3.6vw;
+    padding: 1.6vw;
   }
 
   .orbit-one {
-    width: 330px;
-    height: 330px;
+    width: 55vw;
+    height: 55vw;
   }
 
   .orbit-two {
-    width: 470px;
-    height: 470px;
+    width: 78.3vw;
+    height: 78.3vw;
   }
 
   .product-strip {
@@ -1154,7 +1221,73 @@ footer p {
   .story-band {
     grid-template-columns: 1fr;
     gap: 30px;
-    padding: 50px 30px;
+    padding: 40px 24px;
+  }
+
+  .product-reveal-container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  
+  .logo-wrapper {
+    flex: 1 1 0;
+  }
+
+  .logo-btn {
+    margin: 0;
+  }
+
+  .logo-btn img {
+    height: auto;
+    width: 100%;
+    max-width: 60px;
+  }
+
+  .product-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+    z-index: 9999;
+    /* ensure it overrides any desktop transform origins */
+  }
+  
+  .product-panel::after {
+    border-radius: 0;
+  }
+
+  .product-panel.open .panel-inner {
+    padding: 60px 24px 30px;
+  }
+  
+  .product-panel h3 {
+    font-size: 26px;
+  }
+
+  .early-access {
+    padding: 60px 20px;
+  }
+  
+  .early-access h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .early-access-wrapper {
+    max-width: 100%;
+  }
+
+  .toaster-container {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+  }
+  
+  .toast {
+    text-align: center;
+    justify-content: center;
   }
 
   footer {
@@ -1165,6 +1298,11 @@ footer p {
 
   footer p {
     margin: 0;
+  }
+
+  @keyframes benefits-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 12px)); }
   }
 }
 
